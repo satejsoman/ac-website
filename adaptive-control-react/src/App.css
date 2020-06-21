@@ -2,8 +2,7 @@
   text-align: center;
 } */
 
-/* @import 'scss/custom.css'; */
-
+@import './corporate.css';
 
 .App-logo {
   height: 40vmin;
@@ -46,8 +45,8 @@ body .bg-dark {
 
 .leaflet-container {
     /* height: 100%; */
-    width: 60vw;
-    background-color: rgb(56, 56, 56)!important;
+    height: 40vw;
+    background-color: rgb(56, 56, 56, 0)!important;
 }
 
 .container {
@@ -59,6 +58,6 @@ body .bg-dark {
 }
 
 body { 
-    padding-top: 70px; 
-    background-color: rgb(56, 56, 56)!important;
+    padding-top: 100px; 
+    /* background-color: rgb(56, 56, 56)!important; */
 }

@@ -6,7 +6,6 @@ import { Map, GeoJSON } from 'react-leaflet'
 
 // import MH from "../data/MH.json"
 import IN from "../data/india.json"
-import { Jumbotron } from 'react-bootstrap';
 
 function Rt_color(Rt) { 
     return Rt > 2 ? "#d9534f" : 
@@ -85,7 +84,7 @@ export class NationalMap extends React.Component {
     viewport = { 
         lat: 23.384770186094563,
         lng: 79.47014819820568,
-        zoom: 4
+        zoom: 4.45
     }
 
     // highlightFeature(e) {
@@ -117,19 +116,21 @@ export class NationalMap extends React.Component {
     style(feature) {
         return {
             fillColor: Rt_color(feature.properties.Rt-1),
-            weight: 0.5,
+            weight: 2,
             opacity: 1,
             color: 'white',
-            fillOpacity: 0.7
+            fillOpacity: 0.8
         };
     }
 
     render() { 
-        return (<Jumbotron fluid id="natmapjumbotron">
+        return (
+        // <Jumbotron fluid id="natmapjumbotron">
             <Map center={[this.viewport.lat, this.viewport.lng]} zoom={this.viewport.zoom} zoomControl={false} scrollWheelZoom={false}>
                 <GeoJSON ref={this.geoJsonRef} data={IN} style={this.style}/>
                 {/* onEachFeature={onEachFeature} */}
             </Map>
-        </Jumbotron>)
+        // </Jumbotron>
+        )
     }
 }
