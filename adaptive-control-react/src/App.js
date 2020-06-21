@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Row,Col} from 'react-bootstrap'
 import Header from './components/Header.js';
-import {NationalMap,state_codes} from "./components/Maps.js"
+import {NationalMap, state_codes} from "./components/Maps.js"
 import { Details } from "./components/Details.js";
 
 import Container from 'react-bootstrap/Container'
@@ -41,10 +41,15 @@ export default class App extends Component {
                 <Col>
                 <Form.Group controlId="geoForm">
                     <Form.Label>Geography</Form.Label>
-                    <Form.Control as="select" size="lg" custom>
+                    <Form.Control as="select" size="lg" custom onChange = {(e) => {
+                        this.setState({geography: e.target.value});
+                        console.log("fc set state")
+                        console.log(this)
+                        console.log(this.state.geography)
+                    }}>
                     <option value="IN">All India</option>
                     <optgroup label="States">{
-                        Object.keys(state_codes).map((key, index) => ( 
+                        Object.keys(state_codes).map((key) => ( 
                             <option value={key}>{state_codes[key]}</option>
                         ))
                     }
@@ -79,7 +84,7 @@ export default class App extends Component {
                     {/* <InputGroup>
                     </InputGroup> */}
             </div>
-                <NationalMap />
+                <NationalMap geokey={this.state.geography}/>
                 </Card.Body>
             </Card>
                 
