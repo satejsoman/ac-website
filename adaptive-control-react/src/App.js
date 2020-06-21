@@ -1,108 +1,91 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import {Navbar, Nav, NavItem} from 'react-bootstrap'
+
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    NavLink,
+    Redirect
+    // LinkContainer
+} from "react-router-bootstrap";
+
+import Home from './components/Home';
+import Header from './components/Header';
+import {loadLeaflet} from "./components/Maps"
+import CovinTeam from "./components/CovinTeam";
+import DataSources from "./components/DataSources";
+import Methods from "./components/Methods";
+import Routes from "./components/Routes";
+
 import './App.css';
-import {Row,Col} from 'react-bootstrap'
-import Header from './components/Header.js';
-import {NationalMap, state_codes} from "./components/Maps.js"
-import { Details } from "./components/Details.js";
 
-import Container from 'react-bootstrap/Container'
-import Card from 'react-bootstrap/Card'
-import Form from 'react-bootstrap/Form'
-// import {LineChart, Line} from 'recharts'
+// const Header = _ => <>
+//     <Navbar fixed="top" bg="dark" variant="dark" expand="lg" class="sidebar sidebar-collapsed toggled">
+//     <LinkContainer to="/">
+//         <Navbar.Brand>
+//         <img alt="" src={require('./logo.svg')} width="30" height="30" className="d-inline-block align-top"/>{' '}
+//         Home
+//         </Navbar.Brand>
+//     </LinkContainer>
+//     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+//     <Navbar.Collapse id="basic-navbar-nav">
+//     <Nav className="mr-auto">
+//         <LinkContainer to="/team">COVIN team</LinkContainer>
+//         <LinkContainer to="/sources">Data Sources</LinkContainer>
+//         <LinkContainer to="/methods">Methods</LinkContainer>
+//     </Nav>
+//     </Navbar.Collapse>
+//     </Navbar>         
+// </>
 
+const _Header = _ => <>
+    <Navbar fluid collapseOnSelect>
+    <Navbar.Header>
+        <Navbar.Brand>
+        <Link to="/">Scratch</Link>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+        <Nav pullRight>
+        <NavItem href="/signup">Signup</NavItem>
+        <NavItem href="/login">Login</NavItem>
+        </Nav>
+    </Navbar.Collapse>
+    </Navbar>
+    <Routes />
+</>
 
-export default class App extends Component {
-    state = { 
-        vizType : "statusmap",
-        geography : "IN"
-    };
+const App = _ => <>
+    {loadLeaflet()}
+    <div className="App container">
+    <Header />
+    <Home />
+    <CovinTeam />
+    <DataSources />
+    <Methods />
+    {/* <Router>
+    <Navbar fixed="top" bg="dark" variant="dark" expand="lg" class="sidebar sidebar-collapsed toggled">
+    <Navbar.Brand href="#home">
+        <img alt="" src={require('./logo.svg')} width="30" height="30" className="d-inline-block align-top"/>{' '}
+        Home
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+        <Nav  className="mr-auto">
+            <Nav.Link href="#team">COVIN team</Nav.Link>
+            <Nav.Link href="#sources">Data Sources</Nav.Link>
+            <Nav.Link href="#methods">Methods</Nav.Link>
+        </Nav>
+    </Navbar.Collapse>
+    </Navbar>    
+    <Routes />
+    </Router> */}
+    </div>
+</>
 
-    render() {
-        return (
-            <>
-            <link
-                rel="stylesheet"
-                href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossOrigin=""
-            />
-            <div className="App">
-            <Header />
-        
-            <Container fluid>
-            <Row>
-            <Col sm={8}>
-            <Card>
-                {/* <Card.Header as="h2">Map</Card.Header> */}
-                <Card.Body>
-                <div>
-                <Form>
-                <Row>
-                <Col>
-                <Form.Group controlId="geoForm">
-                    <Form.Label>Geography</Form.Label>
-                    <Form.Control as="select" size="lg" custom onChange = {(e) => {
-                        this.setState({geography: e.target.value});
-                        console.log("fc set state")
-                        console.log(this)
-                        console.log(this.state.geography)
-                    }}>
-                    <option value="IN">All India</option>
-                    <optgroup label="States">{
-                        Object.keys(state_codes).map((key) => ( 
-                            <option value={key}>{state_codes[key]}</option>
-                        ))
-                    }
-                    </optgroup>
-                    </Form.Control>
-                </Form.Group>
-                </Col>
-                <Col>
-                <Form.Group controlId="vizForm">
-                    <Form.Label>Visualization</Form.Label>
-                    <Form.Control as="select" size="lg" custom onChange = {(e) => {this.setState({vizType: e.target.value})}}>
-                    <optgroup label="Maps">
-                    <option value="statusmap">Status</option>
-                    <option value="rtmap">Reproductive rate</option>
-                    {/* <option>Infection rate</option> */}
-                    <option value="Itmap">Active infections</option>
-                    {/* <option>Death rate</option> */}
-                    {/* <option>Deaths</option> */}
-                    </optgroup>
-                    <optgroup label = "Plots">
-                    <option value="rtplot">Reproductive rate</option>
-                    {/* <option>Infection rate</option> */}
-                    <option value="Itplot">Active infections</option>
-                    {/* <option>Death rate</option> */}
-                    {/* <option>Deaths</option> */}
-                    </optgroup>
-                    </Form.Control>
-                </Form.Group>
-                </Col>
-                </Row>
-                </Form>
-                    {/* <InputGroup>
-                    </InputGroup> */}
-            </div>
-                <NationalMap geokey={this.state.geography}/>
-                </Card.Body>
-            </Card>
-                
-            </Col>
-            <Col sm={4}>
-            <Card>
-                <Card.Header as="h1">Details</Card.Header>
-                <Card.Body>
-                <Details viztype={this.state.vizType} geography={this.state.geography}/>
-                </Card.Body>
-            </Card>
-            <br></br>
-            </Col>
-          </Row>
-            </Container>
-        
-            </div>
-            </>
-          );
-        }
-    }
+export default App;

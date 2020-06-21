@@ -14,16 +14,16 @@ class Header extends React.Component {
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-              Adaptive Control
+              Home
             </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link href="#team">COVIN team</Nav.Link>
-                        <Nav.Link href="#sources">Data Sources</Nav.Link>
-                        <Nav.Link href="#methods">Methods</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav pullRight className="mr-auto">
+                    <Nav.Link href="#team">COVIN team</Nav.Link>
+                    <Nav.Link href="#sources">Data Sources</Nav.Link>
+                    <Nav.Link href="#methods">Methods</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
             </Navbar>            
         )
     }
