@@ -2,6 +2,9 @@
   text-align: center;
 } */
 
+/* @import 'scss/custom.css'; */
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -44,6 +47,15 @@ body .bg-dark {
 .leaflet-container {
     /* height: 100%; */
     width: 100%;
+    background-color: rgb(56, 56, 56)!important;
+}
+
+.container {
+    background-color: rgb(56, 56, 56, 0)!important;
+}
+
+#natmapjumbotron {
+    background-color: rgb(56, 56, 56, 0)!important;
 }
 
 body { 
