@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './App.css';
 import {Row,Col} from 'react-bootstrap'
 import Header from './components/Header.js';
 import {NationalMap,state_codes} from "./components/Maps.js"
