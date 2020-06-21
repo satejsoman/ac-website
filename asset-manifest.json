@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/adaptive-control-website/static/css/main.19c6a1bc.chunk.css",
-    "main.js": "/adaptive-control-website/static/js/main.955477d2.chunk.js",
-    "main.js.map": "/adaptive-control-website/static/js/main.955477d2.chunk.js.map",
+    "main.css": "/adaptive-control-website/static/css/main.7c63ac9a.chunk.css",
+    "main.js": "/adaptive-control-website/static/js/main.4c0c0626.chunk.js",
+    "main.js.map": "/adaptive-control-website/static/js/main.4c0c0626.chunk.js.map",
     "runtime-main.js": "/adaptive-control-website/static/js/runtime-main.cea101d8.js",
     "runtime-main.js.map": "/adaptive-control-website/static/js/runtime-main.cea101d8.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/adaptive-control-website/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.66fb93ea.chunk.js": "/adaptive-control-website/static/js/2.66fb93ea.chunk.js",
-    "static/js/2.66fb93ea.chunk.js.map": "/adaptive-control-website/static/js/2.66fb93ea.chunk.js.map",
+    "static/js/2.7cc222eb.chunk.js": "/adaptive-control-website/static/js/2.7cc222eb.chunk.js",
+    "static/js/2.7cc222eb.chunk.js.map": "/adaptive-control-website/static/js/2.7cc222eb.chunk.js.map",
     "index.html": "/adaptive-control-website/index.html",
-    "precache-manifest.51da2ba12da14b5db5dfbad46015e7dc.js": "/adaptive-control-website/precache-manifest.51da2ba12da14b5db5dfbad46015e7dc.js",
+    "precache-manifest.641f48c7dfb20ad49f35aa98d14f022e.js": "/adaptive-control-website/precache-manifest.641f48c7dfb20ad49f35aa98d14f022e.js",
     "service-worker.js": "/adaptive-control-website/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/adaptive-control-website/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.19c6a1bc.chunk.css.map": "/adaptive-control-website/static/css/main.19c6a1bc.chunk.css.map",
-    "static/js/2.66fb93ea.chunk.js.LICENSE.txt": "/adaptive-control-website/static/js/2.66fb93ea.chunk.js.LICENSE.txt",
+    "static/css/main.7c63ac9a.chunk.css.map": "/adaptive-control-website/static/css/main.7c63ac9a.chunk.css.map",
+    "static/js/2.7cc222eb.chunk.js.LICENSE.txt": "/adaptive-control-website/static/js/2.7cc222eb.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/adaptive-control-website/static/media/logo.379fcb05.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cea101d8.js",
-    "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.66fb93ea.chunk.js",
-    "static/css/main.19c6a1bc.chunk.css",
-    "static/js/main.955477d2.chunk.js"
+    "static/js/2.7cc222eb.chunk.js",
+    "static/css/main.7c63ac9a.chunk.css",
+    "static/js/main.4c0c0626.chunk.js"
   ]
 }
