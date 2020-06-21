@@ -46,7 +46,7 @@ body .bg-dark {
 
 .leaflet-container {
     /* height: 100%; */
-    width: 100%;
+    width: 60vw;
     background-color: rgb(56, 56, 56)!important;
 }
 
