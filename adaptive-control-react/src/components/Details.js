@@ -1,12 +1,21 @@
 import React from 'react';
 import { Table, Badge } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card'
 
+// const typenames = {
+//     statusmap: "Adaptive Control Status",
+//     rtmap: "Reproductive rate",
+//     Itmap: "Active infections",
+//     rtplot: "Reproductive rate",
+//     Itplot: "Active infections"
+// }
 
 export const Details = ({viztype, geography}) => {
     var unit = (geography === "IN") ? "state" : "district"
     
     if (viztype === "statusmap") {
         return (<div>
+        <Card.Title className="italic">Adaptive Control Status (by {unit})</Card.Title>
         <p>
         An adaptive control policy sorts geographic units into different policy regimes based on a certain trigger. In the map displayed, each {unit} is colored according to a policy regime based on its <b>reproductive rate</b> (<i>R<sub>t</sub></i>): the number of additional cases in a community that a single person creates. 
         </p>
@@ -25,7 +34,10 @@ export const Details = ({viztype, geography}) => {
         </div>
         )
     } else {
-        return (<p>blah</p>)
+        return (
+        <div>
+            <p>blah</p>
+        </div>)
     }
 }
 
