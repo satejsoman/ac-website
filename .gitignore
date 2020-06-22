@@ -117,3 +117,4 @@ dist
 
 .vscode/
 .DS_Store
+cruft/
