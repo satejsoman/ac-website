@@ -19,8 +19,7 @@ export const Details = ({viztype, geography}) => {
         <p>
         An adaptive control policy sorts geographic units into different policy regimes based on a certain trigger. In the map displayed, each {unit} is colored according to a policy regime based on its <b>reproductive rate</b> (<i>R<sub>t</sub></i>): the number of additional cases in a community that a single person creates. 
         </p>
-        <p>
-            In the policy presented, we restrict movement in each {unit} based on the following criteria:
+        In the policy presented, we restrict movement in each {unit} based on the following criteria:
             <br></br>
             <Table>
             <thead>
@@ -30,13 +29,12 @@ export const Details = ({viztype, geography}) => {
                 <tr> <td><Badge pill size="lg" variant="success"> IMPROVING </Badge></td> <td><i>R<sub>t</sub></i> &lt; 1</td> </tr>
             </thead>
             </Table>
-        </p>
         </div>
         )
     } else {
         return (
         <div>
-            <p>blah</p>
+            <Card.Title className="italic">Demo: pull live data from COVIN19India</Card.Title>
         </div>)
     }
 }
